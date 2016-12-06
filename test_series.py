@@ -38,3 +38,17 @@ def test_lucas(m, result):
     """Test lucas function."""
     from series import lucas
     assert lucas(m) == result
+
+
+@pytest.mark.parametrize("m, result", FIB_PARAMS_TABLE)
+def test_sum_series_fib(m, result):
+    """Test default sum_series."""
+    from series import sum_series
+    assert sum_series(m) == result
+
+
+@pytest.mark.parametrize("m, result", LUCAS_PARAMS_TABLE)
+def test_sum_series_lucas(m, result):
+    """Test sum_series with lucas numbers."""
+    from series import sum_series
+    assert sum_series(m, 2, 1) == result

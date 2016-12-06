@@ -1,7 +1,20 @@
 """Testing series.py."""
+import pytest
+
+PARAMS_TABLE = [
+    [0, 0],
+    [1, 1],
+    [2, 1],
+    [3, 2],
+    [4, 3],
+    [5, 5],
+    [6, 8],
+    [7, 13]
+]
 
 
-def test_fib0():
-    """Test fib for n 0 and 1."""
+@pytest.mark.parametrize("m, result", PARAMS_TABLE)
+def test_fib(m, results):
+    """The ackermann function params m and n."""
     from series import fibonacci
-    assert fibonacci(0) == 0 and fibonacci(1) == 1
+    assert fibonacci(m) == results

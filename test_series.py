@@ -1,7 +1,8 @@
 """Testing series.py."""
 import pytest
 
-PARAMS_TABLE = [
+
+FIB_PARAMS_TABLE = [
     [0, 0],
     [1, 1],
     [2, 1],
@@ -13,8 +14,27 @@ PARAMS_TABLE = [
 ]
 
 
-@pytest.mark.parametrize("m, result", PARAMS_TABLE)
+LUCAS_PARAMS_TABLE = [
+    [0, 2],
+    [1, 1],
+    [2, 3],
+    [3, 4],
+    [4, 7],
+    [5, 11],
+    [6, 18],
+    [7, 29]
+]
+
+
+@pytest.mark.parametrize("m, result", FIB_PARAMS_TABLE)
 def test_fib(m, result):
-    """The ackermann function params m and n."""
+    """Test fibonacci function."""
     from series import fibonacci
     assert fibonacci(m) == result
+
+
+@pytest.mark.parametrize("m, result", LUCAS_PARAMS_TABLE)
+def test_lucas(m, result):
+    """Test lucas function."""
+    from series import lucas
+    assert lucas(m) == result

@@ -14,7 +14,7 @@ PARAMS_TABLE = [
 
 
 @pytest.mark.parametrize("m, result", PARAMS_TABLE)
-def test_fib(m, results):
+def test_fib(m, result):
     """The ackermann function params m and n."""
     from series import fibonacci
-    assert fibonacci(m) == results
+    assert fibonacci(m) == result

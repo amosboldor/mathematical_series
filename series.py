@@ -3,20 +3,12 @@
 
 def fibonacci(n):
     """Return nth value of the fibonacci sequence."""
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    return fibonacci(n - 1) + fibonacci(n - 2)
+    return sum_series(n)
 
 
 def lucas(n):
     """Return nth value of the lucas sequence."""
-    if n == 0:
-        return 2
-    elif n == 1:
-        return 1
-    return lucas(n - 1) + lucas(n - 2)
+    return sum_series(n, 2, 1)
 
 
 def sum_series(n, first=0, second=1):
@@ -27,6 +19,22 @@ def sum_series(n, first=0, second=1):
         return second
     return sum_series(n - 1, first, second) + sum_series(n - 2, first, second)
 
+
+def sum_series_iterative(n, first=0, second=1):
+    """Iterative version of return nth value of the fibonacci sequence."""
+    for i in range(n):
+        first, second = second, first + second
+    return first
+
+
+def fibonacci_iterative(n):
+    """Iterative version of return nth value of the fibonacci sequence."""
+    sum_series_iterative(n)
+
+
+def lucas_iterative(n):
+    """Iterative version of return nth value of the lucas sequence."""
+    sum_series_iterative(n, 2, 1)
 
 if __name__ == "__main__":
     print(__doc__, "\n...\n")

@@ -52,3 +52,31 @@ def test_sum_series_lucas(m, result):
     """Test sum_series with lucas numbers."""
     from series import sum_series
     assert sum_series(m, 2, 1) == result
+
+
+@pytest.mark.parametrize("m, result", LUCAS_PARAMS_TABLE)
+def test_sum_series_lucas_iterative(m, result):
+    """Test sum_series with lucas numbers."""
+    from series import sum_series_iterative
+    assert sum_series_iterative(m, 2, 1) == result
+
+
+@pytest.mark.parametrize("m, result", FIB_PARAMS_TABLE)
+def test_sum_series_fib_iterative(m, result):
+    """Test sum_series with lucas numbers."""
+    from series import sum_series_iterative
+    assert sum_series_iterative(m, 0, 1) == result
+
+
+@pytest.mark.parametrize("m, result", FIB_PARAMS_TABLE)
+def test_fibonacci_iterative(m, result):
+    """Test fibonacci_iterative."""
+    from series import fibonacci_iterative
+    assert fibonacci_iterative(m) == result
+
+
+@pytest.mark.parametrize("m, result", LUCAS_PARAMS_TABLE)
+def test_lucas_iterative(m, result):
+    """Test sum_series with lucas numbers."""
+    from series import lucas_iterative
+    assert lucas_iterative(m) == result

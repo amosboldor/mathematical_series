@@ -29,19 +29,19 @@ def sum_series_iterative(n, first=0, second=1):
 
 def fibonacci_iterative(n):
     """Iterative version of return nth value of the fibonacci sequence."""
-    sum_series_iterative(n)
+    return sum_series_iterative(n)
 
 
 def lucas_iterative(n):
     """Iterative version of return nth value of the lucas sequence."""
-    sum_series_iterative(n, 2, 1)
+    return sum_series_iterative(n, 2, 1)
 
 if __name__ == "__main__":
     print(__doc__, "\n...\n")
-    print("fibonacci(n):\n\n\t" + fibonacci.__doc__)
+    print("fibonacci(n) or fibonacci_iterative(n):\n\n\t" + fibonacci.__doc__)
     print("\n>>> fibonacci(3)\n2\n...\n")
-    print("lucas(n):\n\n\t" + lucas.__doc__)
+    print("lucas(n) or lucas_iterative(n):\n\n\t" + lucas.__doc__)
     print("\n>>> lucas(3)\n4\n...\n")
-    print("sum_series(n, [first=0], [second=1]):\n\n\t" + sum_series.__doc__)
+    print("sum_series or sum_series_iterative(n, [first=0], [second=1]):\n\n\t" + sum_series.__doc__)
     print("\n>>> sum_series(3)\n2")
     print("\n>>> sum_series(3, 2, 1)\n4")
